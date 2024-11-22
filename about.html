@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - QudSystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px rgba(76, 165, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(182, 115, 248, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(76, 165, 255, 0.5); }
+        }
+
+        .glass-btn {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(51, 51, 51, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            transition: all 0.3s ease-in-out;
+            animation: pulseGlow 3s infinite;
+        }
+
+        .glass-btn:hover {
+            background: rgba(51, 51, 51, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+        }
+
+        .gradient-text {
+            background: linear-gradient(-45deg, #FFFFFF, #4CA5FF, #B673F8, #FFFFFF);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 6s ease infinite;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(-45deg, #1F2937, #111827, #1F2937, #0F1624);
+            background-size: 400% 400%;
+            animation: gradientFlow 10s ease infinite;
+        }
+
+        .card-gradient {
+            background: linear-gradient(-45deg,
+                rgba(31, 41, 55, 0.7),
+                rgba(17, 24, 39, 0.7),
+                rgba(76, 165, 255, 0.2),
+                rgba(182, 115, 248, 0.2));
+            background-size: 400% 400%;
+            animation: gradientFlow 8s ease infinite;
+        }
+
+        .dynamic-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dynamic-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(-45deg, #4CA5FF, #B673F8, #4CA5FF);
+            background-size: 400% 400%;
+            animation: gradientFlow 6s ease infinite;
+            z-index: -1;
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body class="bg-[#0F1624]" x-data="{ scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20)">
+    <!-- Navigation -->
+    <nav class="bg-[#0F1624]/80 backdrop-blur-xl fixed w-full z-50 border-b border-[#2A2F42] transition-all duration-300"
+         :class="{ 'py-2': scrolled, 'py-4': !scrolled }">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold bg-gradient-to-r from-[#4CA5FF] to-[#B673F8] bg-clip-text text-transparent hover:scale-105 transition-transform">QudSystem</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="glass-btn px-4 py-2 rounded-full text-white">Home</a>
+                    <a href="services.html" class="glass-btn px-4 py-2 rounded-full text-white">Services</a>
+                    <a href="about.html" class="glass-btn px-4 py-2 rounded-full text-white dynamic-border">About</a>
+                    <a href="contact.html" class="glass-btn px-4 py-2 rounded-full text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="pt-32 pb-20 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-5xl tracking-tight font-bold gradient-text sm:text-6xl md:text-7xl">
+                    About <span class="bg-gradient-to-r from-[#4CA5FF] to-[#B673F8] bg-clip-text text-transparent">QudSystem</span>
+                </h1>
+                <p class="mt-6 max-w-md mx-auto text-lg text-[#8F9BB3] sm:text-xl md:mt-8 md:text-2xl md:max-w-3xl">
+                    Leading the way in software innovation since 2020
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20 bg-[#0F1624]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h2 class="text-3xl font-bold gradient-text">Our Story</h2>
+                    <p class="mt-6 text-[#8F9BB3] leading-relaxed">
+                        Founded with a vision to transform the digital landscape, QudSystem has grown into a leading software development company. Our journey began with a small team of passionate developers and has evolved into a full-service technology partner for businesses worldwide.
+                    </p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h2 class="text-3xl font-bold gradient-text">Our Mission</h2>
+                    <p class="mt-6 text-[#8F9BB3] leading-relaxed">
+                        To deliver innovative software solutions that empower businesses to thrive in the digital age. We combine technical expertise with creative problem-solving to create lasting value for our clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-[#151B29]">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center gradient-text mb-16">Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Hussam Galal</h3>
+                    <p class="mt-2 text-[#8F9BB3]">CEO & Founder</p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Omar Khalil</h3>
+                    <p class="mt-2 text-[#8F9BB3]">Technical Director</p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Ahmad Nasser</h3>
+                    <p class="mt-2 text-[#8F9BB3]">Lead Developer</p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Rami Zaid</h3>
+                    <p class="mt-2 text-[#8F9BB3]">Project Manager</p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Layla Hassan</h3>
+                    <p class="mt-2 text-[#8F9BB3]">UX/UI Director</p>
+                </div>
+                <div class="glass-btn p-8 rounded-2xl text-white card-gradient">
+                    <h3 class="text-xl font-bold gradient-text">Eng. Kareem Mahmoud</h3>
+                    <p class="mt-2 text-[#8F9BB3]">Systems Architect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#151B29] text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-[#4CA5FF] to-[#B673F8] bg-clip-text text-transparent mb-4">QudSystem</h3>
+                    <p class="text-[#8F9BB3]">Innovative Software Solutions</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 gradient-text">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-[#8F9BB3] hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-[#8F9BB3] hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-[#8F9BB3] hover:text-white transition-colors">About</a></li>
+                        <li><a href="contact.html" class="text-[#8F9BB3] hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 gradient-text">Services</h3>
+                    <ul class="space-y-4">
+                        <li><a href="services.html" class="text-[#8F9BB3] hover:text-white transition-colors">Custom Software</a></li>
+                        <li><a href="services.html" class="text-[#8F9BB3] hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="services.html" class="text-[#8F9BB3] hover:text-white transition-colors">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-6 gradient-text">Contact Info</h3>
+                    <ul class="space-y-4 text-[#8F9BB3]">
+                        <li class="hover:text-white transition-colors">info@qudsystem.com</li>
+                        <li class="hover:text-white transition-colors">+1 (555) 123-4567</li>
+                        <li class="hover:text-white transition-colors">123 Tech Street, Digital City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-[#2A2F42] text-center">
+                <p class="text-[#8F9BB3]">&copy; 2024 QudSystem. All rights reserved.</p>
+                <p class="mt-4 text-[#8F9BB3]">Made with ❤️ in Egypt</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
