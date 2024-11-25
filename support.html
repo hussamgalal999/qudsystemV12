@@ -1,1 +1,82 @@
-123
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QudSystem - Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-btn {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(51, 51, 51, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .glass-btn:hover {
+            background: rgba(51, 51, 51, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(-45deg, #FFFFFF, #4CA5FF, #B673F8, #FFFFFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-gradient {
+            background: linear-gradient(-45deg, rgba(31, 41, 55, 0.7), rgba(17, 24, 39, 0.7));
+        }
+    </style>
+</head>
+<body class="bg-[#0F1624]">
+    <!-- Navigation -->
+    <nav class="bg-[#0F1624]/80 backdrop-blur-xl fixed w-full z-50 border-b border-[#2A2F42]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="text-2xl font-bold gradient-text">QudSystem</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="glass-btn px-4 py-2 rounded-full text-white">Home</a>
+                    <a href="services.html" class="glass-btn px-4 py-2 rounded-full text-white">Services</a>
+                    <a href="about.html" class="glass-btn px-4 py-2 rounded-full text-white">About</a>
+                    <a href="support.html" class="glass-btn px-4 py-2 rounded-full text-white">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-10 text-center text-white">
+        <h1 class="text-5xl font-bold gradient-text">Need Help?</h1>
+        <p class="mt-4 text-lg text-[#8F9BB3]">We're here to assist you. Explore our support options below.</p>
+    </section>
+
+    <!-- Support Options -->
+    <section class="py-20 bg-[#0F1624]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid gap-10 md:grid-cols-2">
+                <!-- FAQ Section -->
+                <div class="p-8 rounded-2xl card-gradient">
+                    <h2 class="text-3xl font-bold gradient-text">Frequently Asked Questions</h2>
+                    <p class="mt-4 text-[#8F9BB3]">Find quick answers to common questions.</p>
+                    <a href="faq.html" class="mt-6 inline-block text-[#4CA5FF] hover:text-[#B673F8]">View FAQs →</a>
+                </div>
+                <!-- Contact Support -->
+                <div class="p-8 rounded-2xl card-gradient">
+                    <h2 class="text-3xl font-bold gradient-text">Contact Support</h2>
+                    <p class="mt-4 text-[#8F9BB3]">Need more help? Reach out to our support team.</p>
+                    <a href="contact.html" class="mt-6 inline-block text-[#4CA5FF] hover:text-[#B673F8]">Contact Us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
