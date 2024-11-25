@@ -22,6 +22,18 @@
     </style>
 </head>
 <body class="bg-[#0F1624] text-white">
+    <!-- شريط التنقل -->
+    <nav class="bg-[#1F2937] p-4 flex justify-between items-center shadow-lg">
+        <div class="flex items-center space-x-4">
+            <img src="logo.png" alt="شعار الشركة" class="h-10">
+            <span class="text-xl font-bold gradient-text">QudSystem</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="contact.html" class="text-[#4CA5FF] hover:text-[#B673F8]">تواصل معنا</a>
+            <a href="index.html" class="text-[#4CA5FF] hover:text-[#B673F8]">الرئيسية</a>
+        </div>
+    </nav>
+
     <!-- قسم العنوان -->
     <header class="py-12 text-center">
         <h1 class="text-4xl font-bold gradient-text">الأسئلة الشائعة</h1>
@@ -30,38 +42,55 @@
 
     <!-- قسم الأسئلة -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="space-y-8">
-            <!-- سؤال 1 -->
-            <div class="bg-[#1F2937] p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold gradient-text">ما هي الخدمات التي تقدمها QudSystem؟</h2>
-                <p class="mt-4 text-[#8F9BB3]">
-                    نقدم مجموعة واسعة من الخدمات بما في ذلك تطوير البرمجيات المخصصة، تطبيقات الويب، وتطوير تطبيقات الهواتف المحمولة.
-                </p>
-            </div>
-            
-            <!-- سؤال 2 -->
-            <div class="bg-[#1F2937] p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold gradient-text">كيف يمكنني طلب خدمة معينة؟</h2>
-                <p class="mt-4 text-[#8F9BB3]">
-                    يمكنك زيارة صفحة <a href="contact.html" class="text-[#4CA5FF] hover:text-[#B673F8]">اتصل بنا</a> وإرسال طلبك أو الاستفسار مباشرة عبر النموذج المتاح.
-                </p>
-            </div>
-            
-            <!-- سؤال 3 -->
-            <div class="bg-[#1F2937] p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold gradient-text">هل تقدمون دعمًا بعد تسليم المشروع؟</h2>
-                <p class="mt-4 text-[#8F9BB3]">
-                    نعم، نحن نقدم خدمات دعم وصيانة لضمان عمل حلولنا بشكل مثالي بعد التسليم.
-                </p>
-            </div>
-            
-            <!-- سؤال 4 -->
-            <div class="bg-[#1F2937] p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold gradient-text">ما هي مدة تنفيذ المشروع؟</h2>
-                <p class="mt-4 text-[#8F9BB3]">
-                    تعتمد مدة التنفيذ على حجم وتعقيد المشروع. عادةً، يتم تحديد الجدول الزمني أثناء مرحلة التخطيط.
-                </p>
-            </div>
+        <div class="space-y-4">
+            <!-- قائمة الأسئلة -->
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">هل هناك ضمان على المنتجات؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نعم، جميع منتجاتنا تأتي مع ضمان يغطي عيوب الصناعة.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">ما هي متطلبات النظام؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">تعتمد متطلبات النظام على المنتج الذي تختاره. نقدم وثائق شاملة لتوضيح ذلك.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">هل يمكن تخصيص المنتجات؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نعم، نحن نقدم حلولاً مخصصة بناءً على احتياجات العملاء.</p>
+            </details>
+
+            <!-- إضافة بقية الأسئلة -->
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">كم يستغرق تنفيذ المشروع؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">يعتمد ذلك على نطاق المشروع، ويتم تحديد الإطار الزمني بعد استشارة فريقنا.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">ما هي طرق الدفع المتاحة؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نقبل الدفع عبر البطاقات الائتمانية، التحويل البنكي، والمحافظ الإلكترونية.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">ما هي آراء العملاء عن منتجاتكم؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نحن فخورون بآراء العملاء الإيجابية التي يمكنك الاطلاع عليها في صفحة "آراء العملاء".</p>
+            </details>
+
+            <!-- إضافة بقية الأسئلة -->
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">ما هي سياسة الاسترجاع والاستبدال؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نقدم سياسة مرنة لاسترجاع واستبدال المنتجات وفق الشروط المحددة.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">كيف يمكنني تجربة منتجاتكم؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">يمكنك طلب نسخة تجريبية من خلال صفحة المنتجات.</p>
+            </details>
+
+            <details class="bg-[#1F2937] p-4 rounded-lg shadow-lg">
+                <summary class="text-xl font-bold cursor-pointer gradient-text">هل تقدمون خدمات الدعم الفني؟</summary>
+                <p class="mt-4 text-[#8F9BB3]">نعم، نقدم خدمات الدعم الفني على مدار الساعة.</p>
+            </details>
+
         </div>
     </main>
 
