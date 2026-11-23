@@ -1,0 +1,26 @@
+name: SEO Gate
+
+# Enforces the 20-point QudSystem SEO standard on this static site.
+# A change that breaks a rule fails here before it can deploy.
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  static-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run static SEO gate
+        run: node scripts/seo-static-check.mjs --dir . --exclude shared-header.html
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --exclude-mail "**/*.html" "**/*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
