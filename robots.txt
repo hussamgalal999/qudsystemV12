@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qud-system.vercel.app/sitemap.xml
